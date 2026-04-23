@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /tmp/cc-agent/66030355/project && npm run build > /tmp/nowbuddy-build.txt 2>&1; EXIT=$?; if [ $EXIT -ne 0 ]; then cat /tmp/nowbuddy-build.txt; echo \"{\\\"systemMessage\\\": \\\"Build FAILED. You did not run npm run build, or it has errors. Fix all build errors before finishing.\\\"}\"; else echo \"{\\\"systemMessage\\\": \\\"Build passed.\\\"}\"; fi",
+            "timeout": 60,
+            "statusMessage": "Verifying build..."
+          }
+        ]
+      }
+    ]
+  }
+}
